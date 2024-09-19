@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import lottie from 'lottie-web';
+import MyNewPage from './MyNewPage/MyNewPage';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,42 +24,59 @@ function App() {
     // 5秒后隐藏动画
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 5000);
+      lottie.destroy(); // 停止并销毁动画
+    }, 2000);
 
-    return () => clearTimeout(timer); // 清理计时器
+    return () => {
+      clearTimeout(timer)
+      // 清理动画
+      if (lottie) {
+        lottie.destroy();
+      }
+    };
   }, []);
 
   return (
     <>
-      {showAnimation ? (
-        <div id="lottie-container" style={{ width: '100vw', height: '100vh', position: 'absolute', top: 0, left: 0 }}></div>
-      ) : (
+      {showAnimation && (
+        <div 
+          id="lottie-container" 
+          style={{
+            width: '100vw',
+            height: '100vh',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 9999, // 确保动画在最上层
+            backgroundColor: 'transparent', // 可选: 设置背景颜色
+          }}
+        ></div>
+      )}
+      <div style={{ display: showAnimation ? 'none' : 'block' }}>
         <div>
-          <div>
-            <a href="https://vitejs.dev" target="_blank">
-              <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-              <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
-          </div>
-          <h1>Vite + React</h1>
-          <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
-            <p>
-              Edit <code>src/App.jsx</code> and save to test HMR
-            </p>
-          </div>
-          <p className="read-the-docs">
-            Click on the Vite and React logos to learn more
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        <h1>Vite + React</h1>
+        <div className="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+          <p>
+            Edit <code>src/App.jsx</code> and save to test HMR
           </p>
         </div>
-      )}
+        <p className="read-the-docs">
+          Click on the Vite and React logos to learn more
+        </p>
+        <MyNewPage />
+      </div>
     </>
   );
 }
 
 export default App;
-
