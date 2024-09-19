@@ -25,7 +25,7 @@ function App() {
     const timer = setTimeout(() => {
       setShowAnimation(false);
       lottie.destroy(); // 停止并销毁动画
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer)
