@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
 import lottie from 'lottie-web';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(true);
 
   useEffect(() => {
     const container = document.getElementById('lottie-container');
@@ -15,36 +16,49 @@ function App() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/data.json' // 替换为你的动画文件路径
+        path: '/data.json', // 替换为你的动画文件路径
       });
     }
+
+    // 5秒后隐藏动画
+    const timer = setTimeout(() => {
+      setShowAnimation(false);
+    }, 5000);
+
+    return () => clearTimeout(timer); // 清理计时器
   }, []);
-  
+
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div id="lottie-container"></div>
+      {showAnimation ? (
+        <div id="lottie-container" style={{ width: '100vw', height: '100vh', position: 'absolute', top: 0, left: 0 }}></div>
+      ) : (
+        <div>
+          <div>
+            <a href="https://vitejs.dev" target="_blank">
+              <img src={viteLogo} className="logo" alt="Vite logo" />
+            </a>
+            <a href="https://react.dev" target="_blank">
+              <img src={reactLogo} className="logo react" alt="React logo" />
+            </a>
+          </div>
+          <h1>Vite + React</h1>
+          <div className="card">
+            <button onClick={() => setCount((count) => count + 1)}>
+              count is {count}
+            </button>
+            <p>
+              Edit <code>src/App.jsx</code> and save to test HMR
+            </p>
+          </div>
+          <p className="read-the-docs">
+            Click on the Vite and React logos to learn more
+          </p>
+        </div>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
