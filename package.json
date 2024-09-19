@@ -2,6 +2,7 @@
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ailuntz.github.io/node_vite_react_temp3/",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3003",
