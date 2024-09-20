@@ -17,7 +17,7 @@ function App() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/data.json', // 替换为你的动画文件路径
+        path: `${process.env.PUBLIC_URL}/data.json`, // 使用 Vite 的环境变量
       });
     }
 
