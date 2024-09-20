@@ -1,9 +1,11 @@
 {
+  "homepage": "https://ailuntz.github.io/nodevitereacttemp3/",
   "name": "my-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "deploy": "gh-pages -d dist -r https://github.com/ailuntz/nodevitereacttemp3.git -b gh-pages",
     "dev": "vite --host 0.0.0.0 --port 3003",
     "build": "vite build",
     "lint": "eslint .",
@@ -11,6 +13,7 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "lottie-web": "^5.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

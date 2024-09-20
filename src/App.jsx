@@ -17,7 +17,7 @@ function App() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/data.json', // 替换为你的动画文件路径
+        path: `${process.env.PUBLIC_URL}/data.json`, // 使用 Vite 的环境变量
       });
     }
 
@@ -25,7 +25,7 @@ function App() {
     const timer = setTimeout(() => {
       setShowAnimation(false);
       lottie.destroy(); // 停止并销毁动画
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer)
@@ -71,7 +71,7 @@ function App() {
           </p>
         </div>
         <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
+          Click on the Vite and Reacts
         </p>
         <MyNewPage />
       </div>
