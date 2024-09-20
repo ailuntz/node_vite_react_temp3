@@ -3,11 +3,11 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import lottie from 'lottie-web';
-import MyNewPage from './MyNewPage/MyNewPage';
+import MyNewPage from './MyNewPage2/MyNewPage';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [showAnimation, setShowAnimation] = useState(true);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
     const container = document.getElementById('lottie-container');
@@ -17,7 +17,7 @@ function App() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: `${process.env.PUBLIC_URL}/data.json`, // 使用 Vite 的环境变量
+        path: `${import.meta.env.BASE_URL}data.json`, // 使用 Vite 的环境变量
       });
     }
 
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      {showAnimation && (
+      {/* {showAnimation && (
         <div 
           id="lottie-container" 
           style={{
@@ -51,9 +51,9 @@ function App() {
             backgroundColor: 'transparent', // 可选: 设置背景颜色
           }}
         ></div>
-      )}
+      )} */}
       <div style={{ display: showAnimation ? 'none' : 'block' }}>
-        <div>
+        {/* <div>
           <a href="https://vitejs.dev" target="_blank">
             <img src={viteLogo} className="logo" alt="Vite logo" />
           </a>
@@ -72,7 +72,8 @@ function App() {
         </div>
         <p className="read-the-docs">
           Click on the Vite and Reacts
-        </p>
+        </p> */}
+        <div>nihaoo</div>
         <MyNewPage />
       </div>
     </>
