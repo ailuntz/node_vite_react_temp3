@@ -32,7 +32,7 @@ function MyNewPage() {
       <div className="video-bg">
         <video ref={videoRef} width="320" height="240" autoPlay muted preload="auto" >
         {/* <video ref={videoRef} width="320" height="240" autoPlay muted preload="auto"> */}
-          <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4" />
+          {/* <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4" /> */}
           Your browser does not support the video tag.
         </video>
       </div>
