@@ -7,7 +7,7 @@ import MyNewPage from './MyNewPage2/MyNewPage';
 
 function App() {
   const [count, setCount] = useState(0);
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(true);
 
   useEffect(() => {
     const container = document.getElementById('lottie-container');
@@ -25,7 +25,7 @@ function App() {
     const timer = setTimeout(() => {
       setShowAnimation(false);
       lottie.destroy(); // 停止并销毁动画
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer)
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      {/* {showAnimation && (
+      {showAnimation && (
         <div 
           id="lottie-container" 
           style={{
@@ -51,7 +51,7 @@ function App() {
             backgroundColor: 'transparent', // 可选: 设置背景颜色
           }}
         ></div>
-      )} */}
+      )}
       <div style={{ display: showAnimation ? 'none' : 'block' }}>
         {/* <div>
           <a href="https://vitejs.dev" target="_blank">
@@ -73,7 +73,6 @@ function App() {
         <p className="read-the-docs">
           Click on the Vite and Reacts
         </p> */}
-        <div>nihaoo</div>
         <MyNewPage />
       </div>
     </>
