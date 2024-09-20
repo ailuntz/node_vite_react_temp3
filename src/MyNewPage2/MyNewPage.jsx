@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './MyNewPage.css'; // 如果有对应的 CSS 文件，请记得引入
+import videoFile from '../assets/7btrrd.mp4';
 
 function MyNewPage() {
   const videoRef = useRef(null);
@@ -32,7 +33,7 @@ function MyNewPage() {
       <div className="video-bg">
         <video ref={videoRef} width="320" height="240" autoPlay muted preload="auto" >
         {/* <video ref={videoRef} width="320" height="240" autoPlay muted preload="auto"> */}
-          <source src="/src/assets/7btrrd.mp4" type="video/mp4" />
+          <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
