@@ -3,13 +3,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: transparent; /* 半透明背景 */
+  background-color: transparent;
 }
 
 body {
   background-color: transparent; /* 半透明背景 */
-  backdrop-filter: blur(10px); /* 磨砂效果 */
-  -webkit-backdrop-filter: blur(10px); /* 兼容Safari */
+  /* backdrop-filter: blur(10px); 磨砂效果 */
+  /* -webkit-backdrop-filter: blur(10px); 兼容Safari */
 }
 
 #root {

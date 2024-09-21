@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import MyNewPage from './MyNewPage2/MyNewPage';
+// import MyNewPage from './MyNewPage2/MyNewPage';
 import LoadingAnimation from './MyNewPage2/LoadingAnimation'; // 引入新的动画组件
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       {showAnimation && <LoadingAnimation onEnd={handleAnimationEnd} />}
       
       <div style={{ display: showAnimation ? 'none' : 'block' }}>
-        <MyNewPage />
+        {/* <MyNewPage /> */}
       </div>
     </>
   );
