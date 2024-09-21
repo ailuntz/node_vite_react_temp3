@@ -1,19 +1,4 @@
-import $ from 'jquery';
 
-$(function () {
-  $(".menu-link").click(function () {
-   $(".menu-link").removeClass("is-active");
-   $(this).addClass("is-active");
-  });
- });
- 
- $(function () {
-  $(".main-header-link").click(function () {
-   $(".main-header-link").removeClass("is-active");
-   $(this).addClass("is-active");
-  });
- });
- 
  const dropdowns = document.querySelectorAll(".dropdown");
  dropdowns.forEach((dropdown) => {
   dropdown.addEventListener("click", (e) => {
@@ -23,13 +8,7 @@ $(function () {
   });
  });
  
- $(".search-bar input")
-  .focus(function () {
-   $(".header").addClass("wide");
-  })
-  .blur(function () {
-   $(".header").removeClass("wide");
-  });
+ 
  
  $(document).click(function (e) {
   var container = $(".status-button");
@@ -51,25 +30,3 @@ $(function () {
   });
  });
  
- $(function () {
-  $(".status-button:not(.open)").on("click", function (e) {
-   $(".overlay-app").addClass("is-active");
-  });
-  $(".pop-up .close").click(function () {
-   $(".overlay-app").removeClass("is-active");
-  });
- });
- 
- $(".status-button:not(.open)").click(function () {
-  $(".pop-up").addClass("visible");
- });
- 
- $(".pop-up .close").click(function () {
-  $(".pop-up").removeClass("visible");
- });
- 
- const toggleButton = document.querySelector('.dark-light');
- 
- toggleButton.addEventListener('click', () => {
-   document.body.classList.toggle('light-mode');
- });

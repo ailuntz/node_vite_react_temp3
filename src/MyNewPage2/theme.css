@@ -1,0 +1,23 @@
+:root {
+    --theme-bg-color: rgba(16 18 27 / 40%);
+    --theme-color: #999ba5;
+    --inactive-color: rgb(113 119 144 / 78%);
+    --button-inactive: rgb(249 250 251 / 55%);
+    --dropdown-bg: #21242d;
+    --popup-bg: rgb(22 25 37);
+    --search-bg: #14162b;
+    --overlay-bg: rgba(236, 39, 59, 0.3);
+    --scrollbar-bg: rgb(1 2 3 / 40%);
+  }
+  
+  .light-mode {
+    --theme-bg-color: rgb(255 255 255 / 31%);
+    --theme-color: #3c3a3a;
+    --inactive-color: #333333;
+    --button-inactive: #3c3a3a;
+    --dropdown-bg: #f7f7f7;
+    --popup-bg: rgb(255 255 255);
+    --overlay-bg: rgb(255 255 255 / 30%);
+    --border-color: rgb(255 255 255 / 35%);
+  }
+  

@@ -5,4 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   //base: '/nodevitereacttemp3/', // 设置 `base` 路径
   plugins: [react()],
+  define: {
+  }
 })
