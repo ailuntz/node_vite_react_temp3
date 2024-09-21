@@ -37,9 +37,9 @@ function LoadingAnimation({ onEnd }) {
         top: 0,
         left: 0,
         zIndex: 9999,
-        backgroundColor: 'rgba(255, 255, 255, 0.2)', // 半透明背景
-        backdropFilter: 'blur(10px)', // 磨砂效果
-        webkitBackdropFilter: 'blur(10px)', // 兼容 Safari
+        // backgroundColor: 'rgba(255, 255, 255, 0.2)', // 半透明背景
+        // backdropFilter: 'blur(10px)', // 磨砂效果
+        // webkitBackdropFilter: 'blur(10px)', // 兼容 Safari
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
