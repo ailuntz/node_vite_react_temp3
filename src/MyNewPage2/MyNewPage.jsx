@@ -1,25 +1,11 @@
 import { useEffect, useRef,useState } from 'react';
 import './MyNewPage.css'; // 如果有对应的 CSS 文件，请记得引入
-import videoFile from '../assets/7btrrd.mp4';
 import Dropdown from './Dropdown'; // 引入自包含的 Dropdown 组件
 import ThemeToggle from './ThemeToggle'; // 引入主题切换组件
 import './theme.css';     // 引入与主题相关的样式
 import './dropdown.css';  // 引入 Dropdown 的样式
 
 function MyNewPage() {
-  const videoRef = useRef(null);
-
-  // 切换黑暗模式逻辑
-  useEffect(() => {
-
-
-
-    // 清理函数，移除事件监听器
-    return () => {
-
-    };
-  }, []);
-
 
   useEffect(() => {
     // 菜单链接点击逻辑
@@ -53,6 +39,7 @@ function MyNewPage() {
     const overlayApp = document.querySelector('.overlay-app');
     const popUp = document.querySelector('.pop-up');
     const popUpClose = document.querySelector('.pop-up .close');
+    const cancelButton = document.querySelector('.status-button.close');
 
     statusButtons.forEach((button) => {
       button.addEventListener('click', () => {
@@ -76,24 +63,22 @@ function MyNewPage() {
       });
     }
 
-
-    // 视频播放逻辑
-    const video = videoRef.current;
-    const handleVideoEnd = () => {
-      if (video) {
-        video.currentTime = 0.92; // 重置播放时间
-        video.play(); // 重新播放
-      }
-    };
-    if (video) {
-      video.addEventListener('ended', handleVideoEnd);
+     // 如果 Cancel 按钮存在，绑定关闭事件
+    if (cancelButton) {
+      cancelButton.addEventListener('click', () => {
+        if (overlayApp) {
+          overlayApp.classList.remove('is-active');
+        }
+        if (popUp) {
+          popUp.classList.remove('visible');
+        }
+      });
     }
+
 
     // 清理函数
     return () => {
-      if (video) {
-        video.removeEventListener('ended', handleVideoEnd);
-      }
+
       // 移除所有事件监听器
       menuLinks.forEach((link) => link.removeEventListener('click', () => {}));
       mainHeaderLinks.forEach((link) => link.removeEventListener('click', () => {}));
