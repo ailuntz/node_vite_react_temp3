@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "deploy": "gh-pages -d dist -r git@github.com:ailuntz/nodevitereacttemp3.git -b gh-pages",
-    "dev": "vite --host 0.0.0.0 --port 3003",
+    "dev": "vite --host 0.0.0.0 --port 3004",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

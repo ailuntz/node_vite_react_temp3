@@ -1,9 +1,10 @@
-import { useEffect, useRef,useState } from 'react';
+import { useEffect, } from 'react';
 import './MyNewPage.css'; // 如果有对应的 CSS 文件，请记得引入
 import Dropdown from './Dropdown'; // 引入自包含的 Dropdown 组件
 import ThemeToggle from './ThemeToggle'; // 引入主题切换组件
 import './theme.css';     // 引入与主题相关的样式
 import './dropdown.css';  // 引入 Dropdown 的样式
+import VideoBackground from './VideoBackground';
 
 function MyNewPage() {
 
@@ -93,12 +94,7 @@ function MyNewPage() {
 
   return (
     <div>
-      <div className="video-bg">
-      <video width="320" height="240" autoPlay loop muted>
-        <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-      </video>
-      </div>
+      <VideoBackground />     
       <ThemeToggle />
       <div className="app">
         
